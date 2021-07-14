@@ -1,3 +1,4 @@
+#!/bin/sh
 # Returns:
 #       0 if successful
 #       1 if it fails
@@ -11,4 +12,6 @@ RESPONSE=$(aws s3api put-object \
 if [ ${?} -ne 0 ]; then
     errecho "ERROR: AWS reports put-object operation failed.\n$RESPONSE"
     return 1
+else
+    echo "successful uploaded binary 'coreboot.rom' to S3 bucket"
 fi
