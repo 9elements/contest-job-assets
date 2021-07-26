@@ -7,7 +7,7 @@ datenow=$(date +%Y_%m_%d_%H:%M:%S)
 path="binaries/${datenow}_coreboot.rom"
 filepath="$1/build/coreboot.rom"
 RESPONSE=$(aws s3api put-object \
-            --bucket 9e-contest \
+            --bucket coreboot-spr-sp-images \
             --body $filepath \
             --key $path)
 if [ ${?} -ne 0 ]; then
